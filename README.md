@@ -18,15 +18,17 @@ completely worh the initial struggles I faced.
 
 ## Instalation
 1. Create a project folder and a .venv folder within:
-- mkdir cryptxspace
-- cd cryptxspace
-- python3 -m venv .venv
+```
+$ mkdir cryptxspace
+$ cd cryptxspace
+$ python3 -m venv .venv
+```
 2. Activate environment with `. .venv/bin/activate`
 3. Install Pip `pip3 install Flask`
 4. Ensure that all your packages are up to date with `npm i`
 5. Install all dependencies
-- `pip install -r requirements.txt`
-<!-- 6. `flask run` to start application -->
+  $`pip install -r requirements.txt`
+6. `flask run` to start application
 
 ## Instructions
 - Make an account through the Register page. Full name is not required

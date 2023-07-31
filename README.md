@@ -26,7 +26,7 @@ completely worh the initial struggles I faced.
 4. Ensure that all your packages are up to date with `npm i`
 5. Install all dependencies
 - `pip install -r requirements.txt`
-6. `flask run` to start application
+<!-- 6. `flask run` to start application -->
 
 ## Instructions
 - Make an account through the Register page. Full name is not required

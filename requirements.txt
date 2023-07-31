@@ -1,7 +1,20 @@
+requests
+blinker
+cachelib
+click
+config
 cs50
 Flask
+Flask-Mail
 Flask-Session
-requests
+greenlet
+itsdangerous
+Jinja2
+MarkupSafe
+SQLAlchemy
+sqlparse
+termcolor
+Werkzeug
 
 # config.py
 # __pycache__

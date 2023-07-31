@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Search
+{% endblock %}
+
+{% block main %}
+    <form action="/search" method="post">
+        <input name="symbol" placeholder="Enter Symbol" type="Search"/>
+        <div class="mb-3">
+            <button class="btn btn-primary btn-sz" type="submit">FIND</button>
+        </div>
+    </form>
+ {% endblock %}

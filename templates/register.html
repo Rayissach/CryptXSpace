@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+<div class="flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+  <div class="w-full max-w-md space-y-4">
+    <div>
+      <a class="mx-auto h-12 text-2xl text-slate-400 w-auto hover:text-slate-500" alt="CryptXSpace">CryptXSpace</a>
+      <h2 class="mt-6 text-center text-3xl font-bold tracking-tight text-[#f222ff]">Create your account</h2>
+    </div>
+  </div>
+</div>
+  <form action="/register" method="post">
+    <div class="mb-3">
+      <input autocomplete="off" class="bg-slate-800 rounded-lg ring-2 ring-[#f222ff]/70 mx-auto w-1/4 text-[#f222ff] shadow-inner shadow-[#f222ff] max-[1000px]:w-4/5" id="email" name="email" type="text" placeholder="Email">
+    </div>
+    <div class="mb-3">
+        <input autocomplete="off" class="bg-slate-800 rounded-lg ring-2 ring-[#f222ff]/70 mx-auto w-1/4 text-[#f222ff] shadow-inner shadow-[#f222ff] max-[1000px]:w-4/5" id="username" name="username" type="text" placeholder="Username">
+    </div>
+    <div class="mb-3">
+      <input autocomplete="off" class="bg-slate-800 rounded-lg ring-2 ring-[#f222ff]/70 mx-auto w-1/4 text-[#f222ff] shadow-inner shadow-[#f222ff] max-[1000px]:w-4/5" id="full_name" name="full_name" type="text" placeholder="Full Name">
+    </div>
+    <div class="mb-3">
+        <input autocomplete="off" class="bg-slate-800 rounded-lg ring-2 ring-[#f222ff]/70 mx-auto w-1/4 text-[#f222ff] shadow-inner shadow-[#f222ff] max-[1000px]:w-4/5" id="password" name="password" type="password" placeholder="Password">
+    </div>
+    <div class="mb-3">
+        <input autocomplete="off" class="bg-slate-800 rounded-lg ring-2 ring-[#f222ff]/70 mx-auto w-1/4 text-[#f222ff] shadow-[#f222ff]/80 shadow-inner max-[1000px]:w-4/5" name="confirmation" type="password" placeholder="Confirm">
+    </div>
+
+    <div class="flex m-auto pt-2 pb-2 items-center w-1/4 justify-between max-[1000px]:w-4/5">
+      <div class="flex items-center">
+        <input id="remember-me" name="remember-me" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
+        <label for="remember-me" class="ml-2 block text-sm text-slate-500">Remember me</label>
+      </div>
+
+      <div class="text-sm">
+        <a href="/forgot" class="font-medium text-[#f222ff] hover:text-[#f222ff]/80">Forgot your password?</a>
+      </div>
+    </div>
+
+    <button class="bg-[#f222ff] font-medium text-lg text-slate-300 h-10 mx-auto w-1/4 rounded-lg ring-2 ring-[#f222ff]/70 shadow-xl shadow-[#f222ff]/50 relative hover:text-slate-400 max-[1000px]:w-4/5" type="submit">
+      <span class="absolute inset-y-0 left-0 flex items-center pl-3">
+        <!-- Heroicon name: mini/lock-closed -->
+        <svg class="h-5 w-5 text-[#ffd319] inline-flex group-hover:text-[#ffd319]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+          <path fill-rule="evenodd" d="M10 1a4.5 4.5 0 00-4.5 4.5V9H5a2 2 0 00-2 2v6a2 2 0 002 2h10a2 2 0 002-2v-6a2 2 0 00-2-2h-.5V5.5A4.5 4.5 0 0010 1zm3 8V5.5a3 3 0 10-6 0V9h6z" clip-rule="evenodd" />
+        </svg>
+      </span>
+      Register
+    </button>
+  </form>
+{% endblock %}

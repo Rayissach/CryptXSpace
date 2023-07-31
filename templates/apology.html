@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Apology
+{% endblock %}
+
+{% block main %}
+    <!-- https://memegen.link/ -->
+    <img alt="{{ top }}" class="ring ring-[#8c1eff] img-fluid m-auto" src="http://memegen.link/custom/{{ top | urlencode }}/{{ bottom | urlencode }}.jpg?alt=https://i.imgur.com/EsQSM1s.jpg?2&width=400" title="{{ top }}">
+{% endblock %}

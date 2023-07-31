@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Verify
+{% endblock %}
+
+{% block main %}
+    <div class="flex flex-col text-slate-300 text-lg min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+        <div class="w-full max-w-md space-y-4 text-xl">
+            <form action="/verify" method="POST">
+                <div class="mb-5 flex flex-col relative w-full">
+                    <label for="password" class="text-left mb-2 text-2xl">Verify Password</label>
+                    <input class="bg-slate-800 rounded-lg ring-2 ring-[#22fff2]/70 text-white shadow-inner shadow-[#22fff2] max-[1000px]:w-4/5 mb-3 p-2 h-1/6 w-full" disabled value="*********" />
+                    <input autocomplete="off" class="bg-slate-200/90 rounded-lg ring-2 ring-[#22fff2]/70 text-[#22fff2] shadow-inner shadow-[#22fff2] max-[1000px]:w-4/5 p-2 h-1/6 w-full mb-3" id="password" type="password" name="password" placeholder="Password"/>
+                </div>
+                <div>
+                    <button class="bg-[#22fff2] font-medium text-lg float-left text-slate-400 h-10 mx-auto w-full rounded-lg ring-2 ring-[#22fff2]/70 shadow-xl shadow-[#22fff2]/50 relative hover:text-slate-500 max-[1000px]:w-4/5" type="submit">
+                        <span class="absolute inset-y-0 left-0 flex items-center pl-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5 text-[#229eff] inline-flex group-hover:text-[#229eff]">
+                                <path d="M18 1.5c2.9 0 5.25 2.35 5.25 5.25v3.75a.75.75 0 01-1.5 0V6.75a3.75 3.75 0 10-7.5 0v3a3 3 0 013 3v6.75a3 3 0 01-3 3H3.75a3 3 0 01-3-3v-6.75a3 3 0 013-3h9v-3c0-2.9 2.35-5.25 5.25-5.25z" />
+                              </svg>
+                        </span>
+                        It's Me!
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

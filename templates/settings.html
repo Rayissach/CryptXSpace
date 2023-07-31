@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Settings
+{% endblock %}
+
+{% block main %}
+    <div class="w-full h-full">
+        <div class="flex flex-col min-h-full items-center justify-center py-12 px-4 text-2xl text-slate-300 font-mono sm:px-6 lg:px-8 ">
+            <div class="mb-8 rounded-full shadow-xl shadow-[#8c1eff] hover:shadow-[#f222ff] w-1/4 p-3 max-[1000px]:w-4/5">
+                <a href="/profile" class="hover:text-[#f222ff]">Edit Profile</a>
+            </div>
+            <div class="mb-8 rounded-full shadow-xl shadow-[#8c1eff] hover:shadow-[#ff901f] w-1/4 p-3 max-[1000px]:w-4/5">
+                <a href="/credit" class="hover:text-[#ff901f]">Verify Debit / Credit card</a>
+            </div>
+            <div class="mb-8 rounded-full shadow-xl shadow-[#8c1eff] hover:shadow-[#22fff2] w-1/4 p-3 max-[1000px]:w-4/5">
+                <a href="/verify" class="hover:text-[#22fff2]">Change Password</a>
+            </div>
+            <div class="mb-8 rounded-full shadow-xl shadow-[#8c1eff] hover:shadow-[#8c1eff] w-1/4 p-3 max-[1000px]:w-4/5">
+                <a href="/register" class="hover:text-[#8c1eff]">Register</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,179 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+
+{% block main %}
+
+    <div class="subpixel-antialiased container mb-20 flex mx-auto items-center justify-center shadow-indigo-500/50 rounded-lg place-content-center py-50 h-50">
+        <div class="flex font-mono bg-slate-900/50 shadow-2xl shadow-[#8C1EFF] rounded-lg py-50 pt-10 pl-10 pr-10 pb-2 lg:w-1/6 w-50 min-w-full md:min-w-0">
+            <details class="open:bg-white dark:open:bg-slate-900 open:ring-1 open:ring-black/5 dark:open:ring-white/10 open:shadow-lg p-6 rounded-lg list-none w-100">
+                <summary class="flex items-center mb-4 justify-center w-100 list-none">
+                    <div class="w-50 font-semibold text-2xl text-zinc-300  select-none">
+                        Top 10
+                    </div>
+                    <div class="w-50 max-[420px]:hidden font-medium text-xl text-zinc-300">
+                        {{ m_total }}
+                    </div>
+                </summary>
+                <div class="max-[430px]:overflow-x-scroll">
+                <table class="flex items-center mb-4 justify-center w-100 table text-zinc-300">
+                    <thead>
+                    <tr>
+                        <th class="w-50 text-xl ">Crypto's</th>
+                        <th class="w-50 text-lg">Price</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        {% for row in majors %}
+                            <tr>
+                                <td>{{ row.name }}</td>
+                                <td>{{ row.price }}</td>
+                            </tr>
+                        {% endfor %}
+                        <tr>
+                            <form action="/majors_buy" class="flex" method="POST">
+                                <td>
+                                    <button class="border-solid border-b-indigo-500 bg-[#8C1EFF] rounded-full p-1 w-50 shadow-indigo-500 max-[393px]:text-sm">
+                                        BUY
+                                    </button>
+                                    <input class="bg-gray-800 border-r-slate-400/50 border-l-slate-400/100
+                                    border-t-slate-400/50 border-b-slate-400/100 border-2 w-10 p-1 rounded-full text-indigo-500 focus:outline-none focus:border-t-slate-400/100 focus:border-r-slate-400/100
+                                    hover:border-t-[#8C1EFF]/100
+                                    hover:border-r-[#8C1EFF]/100" name="major_buy">
+                                </td>
+                            </form>
+                            <form action="/majors_sell" method="POST">
+                                <td>
+                                    <button class="border-solid border-b-indigo-500 bg-[#ff2975] shadow-lg shadow-indigo-500/50 rounded-full p-1 w-50 max-[393px]:text-sm">
+                                        SELL
+                                    </button>
+                                    <input class="bg-gray-800 border-r-slate-400/50 border-l-slate-400/100
+                                    border-t-slate-400/50 border-b-slate-400/100 border-2 w-10 p-1 rounded-full text-[#ff2975] focus:outline-none focus:border-t-slate-400/100 focus:border-r-slate-400/100
+                                    hover:border-t-[#ff2975]/100
+                                    hover:border-r-[#ff2975]/100" name="major_sell">
+                                </td>
+                            </form>
+                        </tr>
+                    </tbody>
+                </table>
+              </details>
+            </div>
+        </div>
+    </div>
+
+    <div class="subpixel-antialiased container mb-20 flex mx-auto items-center justify-center shadow-indigo-500/50 rounded-lg place-content-center py-50 h-50">
+        <div class="flex font-mono bg-slate-900/50 shadow-2xl shadow-[#8C1EFF] rounded-lg py-50 pt-10 pl-10 pr-10 pb-2 w-50 min-w-full md:min-w-0">
+            <details class="open:bg-white dark:open:bg-slate-900 open:ring-1 open:ring-black/5 dark:open:ring-white/10 open:shadow-lg p-6 rounded-lg list-none w-100">
+                <summary class="flex items-center mb-4 justify-center w-100 list-none">
+                    <div class="w-50 font-semibold text-2xl text-zinc-300  select-none">
+                        AltCoins
+                    </div>
+                    <div class="w-50 max-[420px]:hidden font-medium text-xl text-zinc-300">
+                        {{ alt_total }}
+                    </div>
+                </summary>
+                <div class="max-[430px]:overflow-x-scroll">
+                <table class="flex items-center mb-4 justify-center w-100 table text-zinc-300">
+                    <thead>
+                    <tr>
+                        <th class=" w-50 text-xl ">Crypto's</th>
+                        <th class="w-50 text-lg">Price</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        {% for row in top_etf %}
+                            <tr>
+                                <td>{{ row.name }}</td>
+                                <td>{{ row.price }}</td>
+                            </tr>
+                        {% endfor %}
+                        <tr>
+                            <form action="/alts_buy" class="flex" method="POST">
+                                <td>
+                                    <button class="border-solid border-b-indigo-500 bg-[#8C1EFF] rounded-full p-1 w-50 shadow-indigo-500 max-[393px]:text-sm">
+                                        BUY
+                                    </button>
+                                    <input class="bg-gray-800 border-r-slate-400/50 border-l-slate-400/100
+                                    border-t-slate-400/50 border-b-slate-400/100 border-2 w-10 p-1 rounded-full text-indigo-500 focus:outline-none focus:border-t-slate-400/100 focus:border-r-slate-400/100
+                                    hover:border-t-[#8C1EFF]/100
+                                    hover:border-r-[#8C1EFF]/100" name="alt_buy">
+                                </td>
+                            </form>
+                            <form action="/alts_sell" method="POST">
+                                <td>
+                                    <button class="border-solid border-b-indigo-500 bg-[#ff2975] shadow-lg shadow-indigo-500/50 rounded-full p-1 w-50 max-[393px]:text-sm">
+                                        SELL
+                                    </button>
+                                    <input class="bg-gray-800 border-r-slate-400/50 border-l-slate-400/100
+                                    border-t-slate-400/50 border-b-slate-400/100 border-2 w-10 p-1 rounded-full text-[#ff2975] focus:outline-none focus:border-t-slate-400/100 focus:border-r-slate-400/100            hover:border-t-[#ff2975]/100
+                                    hover:border-r-[#ff2975]/100" name="alt_sell">
+                                </td>
+                            </form>
+                        </tr>
+                    </tbody>
+                </table>
+              </details>
+            </div>
+        </div>
+    </div>
+
+    <div class="subpixel-antialiased container mb-20 flex mx-auto items-center justify-center shadow-indigo-500/50 rounded-lg place-content-center py-50 h-50">
+        <div class="flex font-mono bg-slate-900/50 shadow-2xl shadow-[#8C1EFF] rounded-lg py-50 pt-10 pl-10 pr-10 pb-2 w-50 min-w-full md:min-w-0">
+            <details class="open:bg-white dark:open:bg-slate-900 open:ring-1 open:ring-black/5 dark:open:ring-white/10 open:shadow-lg p-6 rounded-lg list-none w-100">
+                <summary class="flex items-center mb-4 justify-center w-100 list-none">
+                    <div class="w-50 font-semibold text-2xl text-zinc-300  select-none">
+                        MemeCoins
+                    </div>
+                    <div class="w-50 max-[420px]:hidden font-medium text-xl text-zinc-300">
+                        {{ meme_total }}
+                    </div>
+                </summary>
+                <div class="max-[430px]:overflow-x-scroll">
+                <table class="flex items-center mb-4 justify-center w-100 table text-zinc-300">
+                    <thead>
+                    <tr>
+                        <th class=" w-50 text-xl ">Crypto's</th>
+                        <th class="w-50 text-lg">Price</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        {% for row in memes %}
+                            <tr>
+                                <td>{{ row.name }}</td>
+                                <td>{{ row.price }}</td>
+                            </tr>
+                        {% endfor %}
+                        <tr>
+                            <form action="/memes_buy" class="flex" method="POST">
+                                <td>
+                                    <button class="border-solid border-b-indigo-500 bg-[#8C1EFF] rounded-full p-1 w-50 shadow-2xl shadow-indigo-500 max-[393px]:text-sm">
+                                        BUY
+                                    </button>
+                                    <input autocomplete="off" autofocus class="bg-gray-800 border-r-slate-400/50 border-l-slate-400/100
+                                    border-t-slate-400/50 border-b-slate-400/100 border-2 w-10 p-1 rounded-full text-indigo-500 focus:outline-none focus:border-t-slate-400/100 focus:border-r-slate-400/100
+                                    hover:border-t-[#8C1EFF]/100
+                                    hover:border-r-[#8C1EFF]/100" name="meme_buy">
+                                </td>
+                            </form>
+                            <form action="/memes_sell" class="shadow-2xl shadow-[#ff2975]" method="POST">
+                                <td >
+                                    <button class="border-solid border-b-indigo-500 bg-[#ff2975] shadow-2xl shadow-indigo-500/50 rounded-full p-1 w-50 max-[393px]:text-sm">
+                                        SELL
+                                    </button>
+                                    <input autocomplete="off" class="bg-gray-800 border-r-slate-400/50 border-l-slate-400/100
+                                    border-t-slate-400/50 border-b-slate-400/100 border-2 w-10 p-1 rounded-full text-[#ff2975] focus:outline-none focus:border-t-slate-400/100 focus:border-r-slate-400/100
+                                    hover:border-t-[#ff2975]/100
+                                    hover:border-r-[#ff2975]/100" name="meme_sell">
+                                </td>
+                            </form>
+                        </tr>
+                    </tbody>
+                </table>
+              </details>
+            </div>
+        </div>
+    </div>
+{% endblock %}

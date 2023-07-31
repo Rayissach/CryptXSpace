@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Profile
+{% endblock  %}
+
+{% block main %}
+    <div class="flex flex-col text-slate-300 text-lg min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+        <div class="w-full max-w-md space-y-4 text-xl">
+            <form action="/profile" method="POST">
+                <div class="mb-5 flex flex-col relative w-full">
+                    <label for="name" class="text-left">Full Name</label>
+                    {% if name == None %}
+                        <input class="bg-slate-800 rounded-lg ring-2 ring-[#f222ff]/70 text-white shadow-inner shadow-[#f222ff] max-[1000px]:w-4/5 mb-3 p-2 h-1/6 w-full" disabled value="#########" />
+                    {% else %}
+                        <input class="bg-slate-800 rounded-lg ring-2 ring-[#f222ff]/70 text-white shadow-inner shadow-[#f222ff] max-[1000px]:w-4/5 mb-3 p-2 h-1/6 w-full" disabled value="{{ name }}" />
+                    {% endif %}
+                    <input autocomplete="off" class="bg-slate-200/90 rounded-lg ring-2 ring-[#f222ff]/70 text-[#f222ff] shadow-inner shadow-[#f222ff] max-[1000px]:w-4/5 p-2 h-1/6 w-full" id="name" type="text" name="name" placeholder="Name"/>
+                </div>
+                <div class="mb-5 flex flex-col relative w-full">
+                    <label for="name" class="text-left">Email</label>
+                    <input class="bg-slate-800 rounded-lg ring-2 ring-[#f222ff]/70 text-white shadow-inner shadow-[#f222ff] max-[1000px]:w-4/5 mb-3 p-2 h-1/6 w-full" disabled value="{{ email }}" />
+                    <input autocomplete="off" class="bg-slate-200/90 rounded-lg ring-2 ring-[#f222ff]/70 text-[#f222ff] shadow-inner shadow-[#f222ff] max-[1000px]:w-4/5 p-2 h-1/6 w-full" id="email" name="email" placeholder="Email" type="text"/>
+                </div>
+                <div class="mb-5 flex flex-col relative w-full">
+                    <label for="username" class="text-left">Username</label>
+                    <input class="bg-slate-800 rounded-lg ring-2 ring-[#f222ff]/70 text-white shadow-inner shadow-[#f222ff] max-[1000px]:w-4/5 mb-3 p-2 h-1/6 w-full" disabled value="{{ username }}" />
+                    <input autocomplete="off" class="bg-slate-200/90 rounded-lg ring-2 ring-[#f222ff]/70 text-[#f222ff] shadow-inner shadow-[#f222ff] max-[1000px]:w-4/5 p-2 h-1/6 w-full" id="username" name="username" placeholder="Username" type="text"/>
+                </div>
+                <div class="mb-5 flex flex-col relative w-full">
+                    <label for="password" class="text-left">Password</label>
+                    <input class="bg-slate-800 rounded-lg ring-2 ring-[#f222ff]/70 text-white shadow-inner shadow-[#f222ff] max-[1000px]:w-4/5 mb-3 p-2 h-1/6 w-full" disabled value="*********" />
+                    <button class="bg-[#f222ff] font-medium text-lg float-left text-slate-300 h-10 w-1/2 rounded-lg ring-2 ring-[#f222ff]/70 shadow-xl shadow-[#f222ff]/50 hover:text-slate-400 max-[1000px]:w-4/5 mb-10" type="submit">
+                        <a class="hover:text-current" href="/verify" target="_blank">
+                              Change Password
+                        </a>
+                    </button>
+                </div>
+                <div>
+                    <button class="bg-[#f222ff] font-medium text-lg float-left text-slate-300 h-10 w-full rounded-lg ring-2 ring-[#f222ff]/70 shadow-xl shadow-[#f222ff]/50 relative hover:text-slate-400 max-[1000px]:w-4/5" type="submit">
+                        <a>
+                            <span class="absolute inset-y-0 left-0 flex items-center pl-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5 text-[#ffd319] inline-flex group-hover:text-[#ffd319]">
+                                    <path fill-rule="evenodd" d="M4.5 3.75a3 3 0 00-3 3v10.5a3 3 0 003 3h15a3 3 0 003-3V6.75a3 3 0 00-3-3h-15zm4.125 3a2.25 2.25 0 100 4.5 2.25 2.25 0 000-4.5zm-3.873 8.703a4.126 4.126 0 017.746 0 .75.75 0 01-.351.92 7.47 7.47 0 01-3.522.877 7.47 7.47 0 01-3.522-.877.75.75 0 01-.351-.92zM15 8.25a.75.75 0 000 1.5h3.75a.75.75 0 000-1.5H15zM14.25 12a.75.75 0 01.75-.75h3.75a.75.75 0 010 1.5H15a.75.75 0 01-.75-.75zm.75 2.25a.75.75 0 000 1.5h3.75a.75.75 0 000-1.5H15z" clip-rule="evenodd" />
+                                  </svg>
+                            </span>
+                              Submit
+                            </a>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock  %}

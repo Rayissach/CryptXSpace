@@ -1,5 +1,5 @@
-import os
-import requests
+# import os
+# import requests
 import datetime
 
 from cs50 import SQL

@@ -17,9 +17,15 @@ Aligning and setting up the websites layout was fairly difficult with using a ne
 completely worh the initial struggles I faced.
 
 ## Instalation
-1. First copy folder to local environment and use `cd cryptxspace` to locate file
+1. Create a project folder and a .venv folder within:
+- mkdir cryptxspace
+- cd cryptxspace
+- python3 -m venv .venv
+2. Activate environment with `. .venv/bin/activate`
+3. Install Pip `pip3 install Flask`
 2. Ensure that all your packages are up to date with `npm i`
-3. Install flask_mail with `pip install Flask-Mail`
+3. Install flask_mail with `pip3 install Flask-Mail`
+4.
 4. `flask run` to start application
 
 ## Instructions

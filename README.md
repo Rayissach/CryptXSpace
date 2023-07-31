@@ -27,7 +27,9 @@ $ python3 -m venv .venv
 3. Install Pip `pip3 install Flask`
 4. Ensure that all your packages are up to date with `npm i`
 5. Install all dependencies
-  $`pip install -r requirements.txt`
+```
+$ pip install -r requirements.txt
+```
 6. `flask run` to start application
 
 ## Instructions
